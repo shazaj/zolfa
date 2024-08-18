@@ -1,0 +1,1192 @@
+/* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2.181px solid rgba(255, 255, 255, 0.20);
+    background-color: transparent;
+    z-index: 1000;
+    flex-direction: row-reverse;
+    margin-left: calc(40px - 1.181px);
+    margin-right: calc(40px - 1.181px);
+}
+
+.logo img {
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 53px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    gap: 3px;
+}
+
+.nav-list {
+    display: flex; /* Assure que les éléments sont alignés en ligne */
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    transition: 0.15s ease-in-out, opacity 0.25s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    opacity: 1; /* Tous les éléments commencent avec une opacité pleine */
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 1.4px;
+    background-color: #000000;
+    transition: 0.25s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+/* Appliquer la transparence aux autres éléments lorsqu'un élément est survolé */
+.nav-list li a:hover {
+    opacity: 1; /* L'élément survolé reste opaque */
+}
+
+.nav-list:hover li a:not(:hover) {
+    opacity: 0.3; /* Les autres éléments deviennent transparents */
+}
+
+
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+    
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscribe-btn img.icon-small {
+    width: 16px;
+    height: 16px;
+}
+
+.subscribe-btn {
+    background-color: #002ec4;
+    color: white;
+    width: 133px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lang-selector {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+}
+
+.selected-language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.arrow-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #e8eaed;
+    transition: transform 0.3s ease; /* Ajout d'une transition pour la rotation de la flèche */
+}
+
+.selected-language img.icon-small {
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.language-option {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.language-option img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.language-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Rotation de la flèche lorsque le menu est ouvert */
+.open .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.selected-option img.icon-small {
+    position: absolute;
+    right: 10px; /* Espacement depuis le bord droit */
+    height: 40px; /* Taille agrandie de l'image */
+    width: 40px; /* Taille agrandie de l'image */
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Le conteneur d'image */
+.image-container {
+    position: absolute;
+    bottom: 0; /* Positionne l'image en bas du conteneur */
+    left: 0; /* Positionne l'image à droite */
+    height: 800px; /* Ajuste la hauteur de l'image */
+    z-index: 10; /* Assure que l'image est visible au-dessus de la plupart des éléments, mais en dessous du header */
+}
+
+.image-container img {
+    width: auto;
+    height: 100%; /* Ajuste la taille de l'image pour qu'elle prenne tout l'espace du conteneur */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.options li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.options li img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .menu-container,
+    .action-container,
+    .subscribe-btn,
+    .lang-selector {
+display: none
+    }
+ 
+}
+
+
+@media (min-width: 1200px) {
+
+    .subscrib-button {
+display: none
+    }
+ 
+
+
+.subscrib-button img.icon-smll{
+    display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Arabic:wght@400;500;700&display=swap');
+
+/* Cibler les éléments avec du texte arabe */
+[lang="ar"] {
+    font-family: 'IBM Plex Arabic', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 2.181px solid rgba(255, 255, 255, 0.20);
+        background-color: transparent;
+        z-index: 1000;
+        flex-direction: row-reverse;
+        margin-left: calc(40px - 1.181px);
+        margin-right: calc(40px - 1.181px);
+    }
+
+
+
+/* Style pour masquer l'élément */
+.hidden {
+    display: none; /* Masque l'élément en le retirant du flux de mise en page */
+}
+
+/* Style pour le conteneur du menu */
+/* Style pour le conteneur du menu */
+.links-container {
+    position: fixed; /* Fixe le conteneur par rapport à la fenêtre du navigateur */
+    top: 0; /* Aligne le conteneur en haut */
+    left: 0; /* Aligne le conteneur à gauche */
+    width: 100vw; /* Largeur complète de la fenêtre */
+    height: 100vh; /* Hauteur complète de la fenêtre */
+    background-color: rgba(255, 0, 0, 0); /* Fond rouge pour le conteneur */
+    padding: 20px; /* Espacement interne */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation de l'opacité et de la transformation pour les transitions */
+    z-index: 1000; /* Assure que le menu est au-dessus des autres éléments */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+}
+
+
+/* Style lorsque le menu est caché */
+.links-container.hidden {
+    opacity: 0; /* Rend le menu complètement transparent */
+    transform: scale(0.95); /* Réduit légèrement la taille du menu pour un effet de zoom-out */
+}
+
+/* Style lorsque le menu est visible */
+.links-container:not(.hidden) {
+    opacity: 1; /* Rend le menu complètement opaque */
+    transform: scale(1); /* Taille normale du menu */
+}
+
+/* Style pour le bouton du menu */
+.button {
+    color: #000000; /* Couleur du texte */
+    background: rgba(255, 255, 255, 0); /* Couleur de fond du bouton */
+    border: 0; /* Suppression des bordures */
+    width: 56px; /* Largeur du bouton */
+    height: 56px; /* Hauteur du bouton */
+    display: grid; /* Utilisation de grid layout */
+    place-items: left; /* Aligne le contenu du bouton à gauche */
+    cursor: pointer; /* Curseur en forme de main pour indiquer la clicabilité */
+    padding: 0; /* Suppression des marges internes */
+    opacity: 0.6; /* Opacité du bouton */
+    scale: 0.7; /* Réduction de la taille du bouton */
+    border-radius: 8px; /* Coins arrondis du bouton */
+    transition: 0.25s; /* Durée de la transition pour les effets de survol */
+    position: absolute; /* Permet de le positionner par rapport à son parent */
+    left: 0; /* Aligne le bouton à gauche */
+    z-index: 1100;
+}
+
+
+/* Style pour les chemins du burger menu */
+.burger {
+    position: relative; /* Positionnement relatif pour les pseudo-éléments */
+    width: 32px; /* Largeur des lignes du menu burger */
+    border: 0; /* Suppression des bordures */
+}
+
+/* Style pour les lignes du burger menu */
+.burger,
+.burger::before,
+.burger::after {
+    display: block; /* Affichage en bloc */
+    border-radius: 2px; /* Coins arrondis des lignes */
+    height: 2px; /* Épaisseur des lignes */
+    background: #000000; /* Couleur des lignes */
+    transition: 0.3s; /* Transition pour les effets de transformation */
+}
+
+/* Style pour les lignes avant et après du burger menu */
+.burger::before,
+.burger::after {
+    content: ""; /* Contenu vide pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Alignement à gauche */
+    width: 100%; /* Largeur pleine */
+}
+
+/* Position de la ligne du haut */
+.burger::before {
+    top: -8px; /* Positionnement au-dessus de la ligne du milieu */
+}
+
+/* Position de la ligne du bas */
+.burger::after {
+    top: 8px; /* Positionnement en dessous de la ligne du milieu */
+}
+
+/* Styles pour le burger menu avec animation */
+.ham {
+    cursor: pointer; /* Curseur en forme de main */
+    -webkit-tap-highlight-color: transparent; /* Suppression de l'effet de surbrillance sur les appareils tactiles */
+    transition: transform 400ms; /* Durée de la transition pour la transformation */
+    -moz-user-select: none; /* Désactivation de la sélection du texte */
+    -webkit-user-select: none; /* Désactivation de la sélection du texte */
+    -ms-user-select: none; /* Désactivation de la sélection du texte */
+    user-select: none; /* Désactivation de la sélection du texte */
+    transform: scaleY(0.8) scaleX(1.2); /* Échelle initiale du burger menu */
+}
+
+/* Transformation du burger menu lorsque le bouton est actif */
+.burger-6.is-closed.hamRotate {
+    transform: rotate(45deg) scale(1.2); /* Rotation et échelle du menu burger lorsqu'il est fermé */
+}
+
+/* Style des lignes du burger menu */
+.line {
+    fill: none; /* Aucune couleur de remplissage */
+    transition: 0.4s; /* Durée de la transition pour les effets de ligne */
+    stroke: #000000; /* Couleur des lignes */
+    stroke-width: 5; /* Épaisseur des lignes */
+    stroke-linecap: round; /* Bords arrondis des lignes */
+}
+
+/* Animation spécifique pour la ligne du haut du burger menu */
+.ham1 .top {
+    stroke-dasharray: 40 139; /* Effet de découpage pour l'animation */
+}
+
+/* Animation spécifique pour la ligne du bas du burger menu */
+.ham1 .bottom {
+    stroke-dasharray: 40 180; /* Effet de découpage pour l'animation */
+}
+
+/* Animation lorsque le burger menu est fermé */
+.burger-6.is-closed.ham1 .top {
+    stroke-dashoffset: -98px; /* Décalage de l'animation pour la ligne du haut */
+}
+
+/* Animation lorsque le burger menu est fermé */
+.burger-6.is-closed.ham1 .bottom {
+    stroke-dashoffset: -138px; /* Décalage de l'animation pour la ligne du bas */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100; 
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(12px); /* Applique le flou */
+
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(00%);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -120px;
+    z-index: 101;
+    margin-right: 20%;
+}
+
+.menu li {
+    margin-top: 40px;
+}
+
+.menu li a {
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  L       --------------         O          ---------       G       ---------          O  */
+
+
+
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Adjust the margin as needed */
+    margin-right: -250px; /* Adjust the margin as needed */
+
+}
+
+.logo img {
+    max-width: 20%;
+    height: auto; /* Maintain the aspect ratio */
+    display: block;
+}
+
+
+
+
+
+
+
+/*  L      --------          O        ----------         G         ---------        O  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+.subscrib-button {
+    background-color: #002ec4;
+    color: white;
+    width: 103px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    position: absolute; /* Permet de positionner le bouton par rapport à son parent */
+    left: 50%; /* Centre le bouton horizontalement */
+    transform: translateX(-50%); /* Ajuste le positionnement pour être parfaitement centré */
+    top: 35%;
+}
+
+.subscrib-button img.icon-smll {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+
+
+
+
+
+
+
+
+
+/*    A R A B E -------------------------------------- F R E N C H */
+
+
+
+.language-selector-custom {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    top: 45px;
+    left: -20px;
+
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.148);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.fleche-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #e8eaed;
+}
+
+.selected-option img.icon-small {
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.options li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.options li img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+/*    A R A B E -------------------------------------- F R E N C H */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pour Masquer open-menu et close-menu pour les écrans de plus de 1400px */
+@media (min-width: 1200px) {
+    .header-right {
+        display: none;
+    }
+    .button{
+        display: none;
+    }
+    .links-container {
+        display: none;
+    }
+    .header-content{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .language-selector-custom{
+        display: none;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 439px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px; /* Adjust the margin as needed */
+        margin-right: -210px; /* Adjust the margin as needed */
+    
+    }
+    
+    .logo img {
+        max-width: 20%;
+        height: auto; /* Maintain the aspect ratio */
+        display: block;
+    }
+
+
+
+
+    /* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+.subscrib-button {
+    background-color: #002ec4;
+    color: white;
+    width: 93px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    position: absolute; /* Permet de positionner le bouton par rapport à son parent */
+    left: 50%; /* Centre le bouton horizontalement */
+    transform: translateX(-50%); /* Ajuste le positionnement pour être parfaitement centré */
+    top: 40%;
+}
+
+.subscrib-button img.icon-smll {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+
+
+    
+    
+}
+
+
+
+@media (max-width: 366px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px; /* Adjust the margin as needed */
+        margin-right: -180px; /* Adjust the margin as needed */
+    
+    }
+    
+    .logo img {
+        max-width: 18%;
+        height: auto; /* Maintain the aspect ratio */
+        display: block;
+    }
+
+
+
+
+    /* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+.subscrib-button {
+    background-color: #002ec4;
+    color: white;
+    width: 83px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    position: absolute; /* Permet de positionner le bouton par rapport à son parent */
+    left: 50%; /* Centre le bouton horizontalement */
+    transform: translateX(-50%); /* Ajuste le positionnement pour être parfaitement centré */
+    top: 40%;
+}
+
+.subscrib-button img.icon-smll {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+
+
+    
+    
+}
+.menu {
+    display: flex; /* Assure que les éléments sont alignés en ligne */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    transition: 0.15s ease-in-out, opacity 0.25s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    opacity: 1; /* Tous les éléments commencent avec une opacité pleine */
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 1.4px;
+    background-color: #000000;
+    transition: 0.25s ease-in-out;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+}
+
+/* Appliquer la transparence aux autres éléments lorsqu'un élément est survolé */
+.menu li a:hover {
+    opacity: 1; /* L'élément survolé reste opaque */
+}
+
+.menu:hover li a:not(:hover) {
+    opacity: 0.3; /* Les autres éléments deviennent transparents */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section {
+    height: 100vh; /* Chaque section prend toute la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #563030;
+  /*  border-bottom: 1px solid #ddd;*/
+}
+
+.section:nth-child(even) {
+    background-color: #5f3a3a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-section {
+  height: 100vh;
+  background-image: url("z (1).png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.hero-section .content button {
+  background: #fff;
+  padding: 12px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 38px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.hero-section .content button:hover {
+  color: #fff;
+  background: #C06B3E;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}

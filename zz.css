@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Arabic:wght@400;500;700&display=swap');
+
+/* Cibler les éléments avec du texte arabe */
+[lang="ar"] {
+    font-family: 'IBM Plex Arabic', sans-serif;
+}
+
+
+
+/* Styles généraux */
+body {
+    font-family: 'IBM Plex Arabic', 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7c45dc;
+    color: white;
+    overflow-x: hidden;
+    background-image: url('z (1).png');
+    background-size: cover; /* Couvre tout l'écran */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+    height: 85vh; /* Assure que le body occupe toute la hauteur de la fenêtre */
+    width: 100vw; /* Assure que le body occupe toute la largeur de la fenêtre */
+    display: flex; /* Assure que le contenu peut se positionner correctement */
+    align-items: center; /* Centre verticalement le contenu si nécessaire */
+    justify-content: center; /* Centre horizontalement le contenu si nécessaire */
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2.181px solid rgba(255, 255, 255, 0.20);
+    background-color: transparent;
+    z-index: 1000;
+    flex-direction: row-reverse;
+    margin-left: calc(40px - 1.181px);
+    margin-right: calc(40px - 1.181px);
+}
+
+.logo img {
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 53px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    gap: 3px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajout d'espace entre les boutons et le sélecteur de langue */
+}
+
+.subscrib-button img.icon-small {
+    width: 16px;
+    height: 16px;
+}
+
+.subscrib-button, .more-info-button {
+    background-color: #002ec4;
+    color: white;
+    width: 133px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.language-selector-custom {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative; /* Positionner la flèche et l'icône relativement au conteneur */
+}
+
+.fleche-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #e8eaed;
+}
+
+.selected-option img.icon-small {
+    position: absolute;
+    right: 10px; /* Espacement depuis le bord droit */
+    height: 40px; /* Taille agrandie de l'image */
+    width: 40px; /* Taille agrandie de l'image */
+  
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.options li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.options li img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+/*
+.language-selector-custom:hover .options {
+    display: block; /* Afficher les options au survol *//*
+}
+
+
+
+
+
+
+
+/* Stylisation de la section Hero */
+/* Stylisation de la section Hero */
+/* Section Hero */
+
+/* Section Hero */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 20px;
+    height: 100vh;
+    color: white;
+    flex-direction: row-reverse;
+    position: relative;
+    transform: translateY(18.7%);
+
+}
+
+.text-container {
+    max-width: 30%;
+    margin-top: 50px;
+    text-align: right; /* Aligner le texte à gauche */
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: -200px;
+
+}
+
+.buttons-section {
+    display: flex;
+    gap: 0px; /* Espacement entre les boutons */
+}
+
+ .features-button {
+    background-color: #002ec4;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    position: relative; /* Pour positionner l'image par rapport au bouton */
+  left: 160px;
+  top: 20px;
+ }
+    .subscribe-button {
+        background-color: #4a4f5f00;
+        color: #ffc503;
+        width: 150px;
+        height: 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        position: relative; /* Pour positionner l'image par rapport au bouton */
+        border: 1px solid #ffc503;
+        left: 140px;
+        top: 20px;
+
+
+}
+
+.arrow-icon {
+    width: 20px; /* Ajustez la taille selon vos besoins */
+    height: 20px; /* Ajustez la taille selon vos besoins */
+    margin-left: 10px; /* Espacement entre le texte et l'image */
+    vertical-align: middle; /* Aligne l'image avec le texte */
+}
+
+.features-button {
+    background-color: #ffc503;
+    color: white;
+}
+
+
+.image-container {
+    max-width:  60%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 200px;
+    transform: translateY(-20%);
+
+}
+
+.image-container img {
+    max-width:94%;
+    height: auto;
+}
+
+/* Positionnement du Shape */
+.discount-shape {
+    background-color: rgba(255, 255, 255, 0.15); /* Couleur de fond semi-transparente */
+    color: #ffffff; /* Couleur du texte */
+   /* padding: 10px 20px; /* Ajoute un peu de padding pour l'espacement intérieur */
+    border-radius: 30px; /* Courbure des bords */
+    font-size: 20px; /* Taille de la police */
+    position: absolute; /* Pour le positionnement précis */
+    top: 200px; /* Ajuste en fonction de l'emplacement souhaité */
+    left: calc(50% - -0441px); /* Centrer la forme horizontalement (302px / 2 = 151px) */
+    z-index: 10; /* Place la forme au-dessus des autres éléments */
+    height: 45px; /* Hauteur de la forme */
+    width: 302px; /* Largeur de la forme */
+    display: flex; /* Aligne le texte au centre */
+    align-items: center; /* Centre verticalement le texte */
+    justify-content: center; /* Centre horizontalement le texte */
+    
+
+}
+.highlight {
+    color: #FFD700; /* Couleur jaune pour le texte "15%" */
+}

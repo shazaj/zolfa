@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Arabic:wght@400;500;700&display=swap');
+
+/* Cibler les éléments avec du texte arabe */
+[lang="ar"] {
+    font-family: 'IBM Plex Arabic', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color: darkgoldenrod;
+    font-family: 'IBM Plex Arabic', sans-serif;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+
+
+
+
+
+
+
+
+
+/* Style pour masquer l'élément */
+.hidden {
+    display: none; /* Masque l'élément en le retirant du flux de mise en page */
+}
+
+/* Style pour le conteneur du menu */
+/* Style pour le conteneur du menu */
+.links-container {
+    position: fixed; /* Fixe le conteneur par rapport à la fenêtre du navigateur */
+    top: 0; /* Aligne le conteneur en haut */
+    left: 0; /* Aligne le conteneur à gauche */
+    width: 100vw; /* Largeur complète de la fenêtre */
+    height: 100vh; /* Hauteur complète de la fenêtre */
+    background-color: red; /* Fond rouge pour le conteneur */
+    padding: 20px; /* Espacement interne */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation de l'opacité et de la transformation pour les transitions */
+    z-index: 1000; /* Assure que le menu est au-dessus des autres éléments */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+}
+
+
+/* Style lorsque le menu est caché */
+.links-container.hidden {
+    opacity: 0; /* Rend le menu complètement transparent */
+    transform: scale(0.95); /* Réduit légèrement la taille du menu pour un effet de zoom-out */
+}
+
+/* Style lorsque le menu est visible */
+.links-container:not(.hidden) {
+    opacity: 1; /* Rend le menu complètement opaque */
+    transform: scale(1); /* Taille normale du menu */
+}
+
+/* Style pour le bouton du menu */
+.button {
+    color: #000000; /* Couleur du texte (non utilisé ici car le texte est un SVG) */
+    background: rgba(255, 255, 255, 0); /* Couleur de fond du bouton */
+    border: 0; /* Suppression des bordures */
+    width: 56px; /* Largeur du bouton */
+    height: 56px; /* Hauteur du bouton */
+    display: grid; /* Utilisation de grid layout pour centrer le contenu */
+    place-items: center; /* Centrage du contenu du bouton */
+    cursor: pointer; /* Curseur en forme de main pour indiquer la clicabilité */
+    padding: 0; /* Suppression des marges internes */
+    opacity: 0.6; /* Opacité du bouton */
+    scale: 0.7; /* Réduction de la taille du bouton */
+    border-radius: 8px; /* Coins arrondis du bouton */
+    transition: 0.25s; /* Durée de la transition pour les effets de survol */
+    position: relative;
+    z-index: 1100;
+}
+
+/* Style pour les chemins du burger menu */
+.burger {
+    position: relative; /* Positionnement relatif pour les pseudo-éléments */
+    width: 32px; /* Largeur des lignes du menu burger */
+    border: 0; /* Suppression des bordures */
+}
+
+/* Style pour les lignes du burger menu */
+.burger,
+.burger::before,
+.burger::after {
+    display: block; /* Affichage en bloc */
+    border-radius: 2px; /* Coins arrondis des lignes */
+    height: 2px; /* Épaisseur des lignes */
+    background: #000000; /* Couleur des lignes */
+    transition: 0.3s; /* Transition pour les effets de transformation */
+}
+
+/* Style pour les lignes avant et après du burger menu */
+.burger::before,
+.burger::after {
+    content: ""; /* Contenu vide pour les pseudo-éléments */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Alignement à gauche */
+    width: 100%; /* Largeur pleine */
+}
+
+/* Position de la ligne du haut */
+.burger::before {
+    top: -8px; /* Positionnement au-dessus de la ligne du milieu */
+}
+
+/* Position de la ligne du bas */
+.burger::after {
+    top: 8px; /* Positionnement en dessous de la ligne du milieu */
+}
+
+/* Styles pour le burger menu avec animation */
+.ham {
+    cursor: pointer; /* Curseur en forme de main */
+    -webkit-tap-highlight-color: transparent; /* Suppression de l'effet de surbrillance sur les appareils tactiles */
+    transition: transform 400ms; /* Durée de la transition pour la transformation */
+    -moz-user-select: none; /* Désactivation de la sélection du texte */
+    -webkit-user-select: none; /* Désactivation de la sélection du texte */
+    -ms-user-select: none; /* Désactivation de la sélection du texte */
+    user-select: none; /* Désactivation de la sélection du texte */
+    transform: scaleY(0.8) scaleX(1.2); /* Échelle initiale du burger menu */
+}
+
+/* Transformation du burger menu lorsque le bouton est actif */
+.burger-6.is-closed.hamRotate {
+    transform: rotate(45deg) scale(1.2); /* Rotation et échelle du menu burger lorsqu'il est fermé */
+}
+
+/* Style des lignes du burger menu */
+.line {
+    fill: none; /* Aucune couleur de remplissage */
+    transition: 0.4s; /* Durée de la transition pour les effets de ligne */
+    stroke: #000000; /* Couleur des lignes */
+    stroke-width: 5; /* Épaisseur des lignes */
+    stroke-linecap: round; /* Bords arrondis des lignes */
+}
+
+/* Animation spécifique pour la ligne du haut du burger menu */
+.ham1 .top {
+    stroke-dasharray: 40 139; /* Effet de découpage pour l'animation */
+}
+
+/* Animation spécifique pour la ligne du bas du burger menu */
+.ham1 .bottom {
+    stroke-dasharray: 40 180; /* Effet de découpage pour l'animation */
+}
+
+/* Animation lorsque le burger menu est fermé */
+.burger-6.is-closed.ham1 .top {
+    stroke-dashoffset: -98px; /* Décalage de l'animation pour la ligne du haut */
+}
+
+/* Animation lorsque le burger menu est fermé */
+.burger-6.is-closed.ham1 .bottom {
+    stroke-dashoffset: -138px; /* Décalage de l'animation pour la ligne du bas */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100; 
+    background-color: rgba(255, 255, 255, 0.743);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(00%);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -120px;
+    z-index: 101;
+    margin-right: 20%;
+}
+
+.menu li {
+    margin-top: 40px;
+}
+
+.menu li a {
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  L       --------------         O          ---------       G       ---------          O  */
+
+
+
+
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px; /* Adjust the margin as needed */
+    margin-right: -250px; /* Adjust the margin as needed */
+
+}
+
+.logo img {
+    max-width: 20%;
+    height: auto; /* Maintain the aspect ratio */
+    display: block;
+}
+
+
+
+
+
+
+
+/*  L      --------          O        ----------         G         ---------        O  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+
+
+
+
+
+
+/* 2 I X T I R A K $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2 I X T I R A K */
+
+
+
+
+
+
+
+
+
+
+/*    A R A B E -------------------------------------- F R E N C H */
+
+
+
+.language-selector-custom {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+    top: 45px;
+    left: -20px;
+
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.148);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.fleche-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #e8eaed;
+}
+
+.selected-option img.icon-small {
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.options li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.options li img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+/*    A R A B E -------------------------------------- F R E N C H */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pour Masquer open-menu et close-menu pour les écrans de plus de 1400px */
+@media (min-width: 1200px) {
+    .header-right {
+        display: none;
+    }
+    .button{
+        display: none;
+    }
+    .links-container {
+        display: none;
+    }
+    .header-content{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .language-selector-custom{
+        display: none;
+    }
+
+}

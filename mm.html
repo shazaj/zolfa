@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tss.css">
+</head>
+<body>
+    <header>
+      
+        <div class="header-right"></div>
+           
+            
+        </div>
+        <button id="menu-toggle"
+          onclick="toggleMenu()"
+          class="button"
+        >
+            <svg class="burger-6 ham hamRotate ham1" viewBox="0 0 100 100">
+                <path
+                  class="line top"
+                  d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+                />
+                <path class="line middle" d="m 30,50 h 40" />
+                <path
+                  class="line bottom"
+                  d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+                />
+            </svg>
+        </button>
+        <div class="links-container hidden" id="menu">
+            <div class="header-content">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#" lang="ar">إتصل بنا</a></li>
+                        <li><a href="#" lang="ar">الباقات</a></li>
+                        <li><a href="#" lang="ar">باقات الاشتراك</a></li>
+                        <li><a href="#" lang="ar">الأسئلة الشائعة</a></li>
+                        <li><a href="#" lang="ar">عن زلفى</a></li>
+                    </ul>
+                    
+                    
+                    <div class="language-selector-custom" id="language-selector">
+                        <div class="selected-option">
+                            <svg class="fleche-icon" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed">
+                                <path d="M480-344 240-584l47.33-47.33L480-438.67l192.67-192.66L720-584 480-344Z"/>
+                            </svg>
+                            <img src="F.png" alt="French Icon" class="icon-small" id="selected-icon"> Francais
+                        </div>
+                        <ul class="options" id="language-options">
+                            <li data-value="en">
+                                <img src="F.png" alt="French Icon" class="icon-small"> Francais
+                            </li>
+                            <li data-value="ar">
+                                <img src="M.png" alt="Arabic Icon" class="icon-small"> العربية
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <script>
+      function toggleMenu() {
+    var menu = document.getElementById('menu');
+    var svg = document.querySelector('.burger-6');
+    var headerRight = document.querySelector('.header-right'); // Select the header-right element
+
+    menu.classList.toggle('hidden');
+    svg.classList.toggle('is-closed');
+    
+    // Toggle the visibility of the header-right element
+    headerRight.style.display = headerRight.style.display === 'none' ? 'flex' : 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+  const languageSelector = document.getElementById('language-selector');
+  const selectedOption = languageSelector.querySelector('.selected-option');
+  const options = languageSelector.querySelector('#language-options');
+  const languageText = {
+      en: 'Francais',
+      ar: 'العربية'
+  };
+
+  // Afficher les options au clic sur le sélecteur
+  selectedOption.addEventListener('click', function() {
+      options.style.display = options.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Gérer la sélection d'une langue
+  options.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+          const selectedValue = event.target.getAttribute('data-value');
+          const selectedText = languageText[selectedValue];
+          const selectedIcon = event.target.querySelector('img').src;
+
+          // Mettre à jour le texte et l'icône du sélecteur
+          selectedOption.innerHTML = `<img src="${selectedIcon}" alt="Selected Icon" class="icon-small"> ${selectedText} <svg class="fleche-icon" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M480-344 240-584l47.33-47.33L480-438.67l192.67-192.66L720-584 480-344Z"/></svg>`;
+
+          // Cacher les options après la sélection
+          options.style.display = 'none';
+      }
+  });
+
+  // Cacher les options lorsqu'on clique en dehors du sélecteur
+  document.addEventListener('click', function(event) {
+      if (!languageSelector.contains(event.target)) {
+          options.style.display = 'none';
+      }
+  });
+});
+
+    </script>
+</body>
+</html>

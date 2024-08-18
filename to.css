@@ -1,0 +1,647 @@
+/* Styles généraux */
+body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7c45dc;
+    color: white;
+    overflow-x: hidden;
+    background-image: url('z (1).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2.181px solid rgba(255, 255, 255, 0.20);
+    background-color: transparent;
+    z-index: 1000;
+    flex-direction: row-reverse;
+    margin-left: calc(40px - 1.181px);
+    margin-right: calc(40px - 1.181px);
+}
+
+
+
+#sidebar-active:checked ~ .links-container {
+    display: flex; /* Affiche le menu lorsque le checkbox est activé */
+}
+/* Navigation */
+#sidebar-active {
+    display: none;
+}
+.logo img {
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 53px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    gap: 3px;
+    transform: translateX(20%);
+
+
+
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments du menu horizontalement */
+    gap: 32px;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+
+.open-menu{
+    position: absolute;
+    color: red;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+    margin-left: 30px;
+    display: none;
+}
+
+.close-menu {
+    position: absolute;
+    color: rgb(17, 255, 0);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+
+#check {
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    left: 200px;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.close-menu {
+    display: none; /* Masqué par défaut */
+    color: rgb(0, 136, 255);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 102;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscrib-button img.icon-small {
+    width: 16px;
+    height: 16px;
+}
+
+.subscrib-button, .more-info-button {
+    position: relative;
+    background-color: #002ec4;
+    color: white;
+    width: 133px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    margin-left: -80%;
+    transform: translatey(-111%);
+}
+
+.language-selector-custom {
+    position: relative;
+    cursor: pointer;
+    width: 150px;
+margin-left: -50%;    transform: translatey(-210%);
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.148);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.fleche-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: #e8eaed;
+}
+
+.selected-option img.icon-small {
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.menu{
+    margin-top: 15%;
+}
+
+.options li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+}
+
+.options li img.icon-small {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+.open-menu,
+.close-menu {
+    display: none; /* Masque les icônes open-menu et close-menu */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles pour les écrans inférieurs à 1400px */
+/* Styles pour les écrans inférieurs à 1400px *//* Styles pour les écrans inférieurs à 1400px */
+@media (max-width: 1400px) {
+    
+ 
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 100; 
+        background-color: rgba(255, 255, 255, 0.9);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        z-index: 101;
+    }
+
+    .menu li {
+        margin-top: 40px;
+    }
+
+    .menu li a {
+        padding: 10px;
+    }
+
+    .open-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 102; 
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-500%);
+    }
+
+    .close-menu {
+        display: none; 
+        cursor: pointer;
+        z-index: 102; 
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    #check:checked ~ .header-content {
+        transform: translateX(0);
+    }
+
+    #check:checked ~ .open-menu {
+        display: none;
+    }
+
+    #check:checked ~ .close-menu {
+        display: block; 
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+    .subscri-button{
+        align-items: center;
+    }
+}
+@media (max-width: 1400px) {
+    .header-right {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative; /* Pour s'assurer que les éléments internes sont bien positionnés */
+    }
+
+    .center-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .subscri-button {
+        background-color: #002ec4;
+        color: white;
+        width: 133px;
+        height: 35px;
+        border: none;
+        border-radius: 30px;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .open-menu {
+        margin-left: auto; /* Assure que l'icône est à droite */
+        cursor: pointer;
+        font-size: 1.5rem;
+        position: relative; /* Assure que l'icône reste dans son conteneur */
+        transform: translateX(100%);
+
+    }
+}
+
+
+
+@media (max-width: 1400px) {
+    .links-container, .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        background: rgba(166, 7, 118, 0); /* Fond semi-transparent */
+        backdrop-filter: blur(20px); /* Ajustez la valeur pour le degré de flou souhaité */        transition: transform 0.9s ease-in-out;
+        transform: translateX(00%);
+        opacity: 1;
+        transition: transform 9.3s ease;
+ 
+    }
+
+    .links-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 101;
+        width: 100%;
+        height: 100vh;
+        background-color: #ff000000;
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0);
+    /*    transition: transform 9.3s ease-in-out;*/
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -70px;
+        z-index: 101;
+        font-size: 0px;
+        gap: -80px;
+
+    }
+
+    .menu li {
+        margin-top: 10px;
+    }
+
+    .menu li a {
+        padding: 10px;
+        font-size: 30px; /* Ajustez en fonction du rendu */    }
+
+    .header-content {
+        color: #002ec4;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        display: flex;
+    }
+
+    .close-menu {
+        display: none;
+        cursor: pointer;
+        z-index: 1003;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        z-index: 102;
+    }
+    .language-selector-custom{
+        display: none;
+    }
+}
+
+
+/* Pour Masquer open-menu et close-menu pour les écrans de plus de 1400px */
+@media (min-width: 1400px) {
+    .open-sidebar-button,
+    .close-sidebar-button {
+        display: none;
+    }
+
+
+
+    .heade-content{
+        display: none;
+        }
+
+    .subscri-button  {
+        display: none;
+    }  
+    .icon-smll{
+        display: none;
+    }
+}
+
+
+
+/* Pour Masquer open-menu et close-menu pour les écrans de plus de 1400px */
+@media (max-width: 1400px) {
+    .open-sidebar-button{
+        position: absolute;
+        left: 20px; /* Positionne le logo complètement à gauche */
+        top: 50%;
+        transform: translateY(-50%); }
+        .close-sidebar-button {
+            position: absolute;
+            left: 53px; /* Positionne le logo complètement à gauche */
+            top: 4.5%;
+            transform: translateY(-0%); }
+}
+
+
+
+
+
+
+
+
+/*           L            O             G          O  */
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+  
+    
+
+    .subscri-button {
+        position: absolute;
+        left: 50%; /* Place le bouton au milieu de l'axe X du conteneur */
+        transform: translateX(-50%) translateY(-50%); /* Centre le bouton parfaitement à l'horizontale et à la verticale */
+        
+        background-color: #002ec4;
+        color: white;
+        width: 90px;
+        height: 35px;
+        border: none;
+        border-radius: 30px;
+        font-size: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+    }
+    
+    .open-menu {
+        position: absolute;
+        right: 20px; /* Positionne l'icône open-menu complètement à droite */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 102;
+        display: block;
+    }
+    .language-selector-custom {
+        display: block;
+        margin: 70px auto 0 auto; /* 70px en haut, auto pour centrer horizontalement */
+        padding: 50px;
+        top: 20%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {  .logo img {
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+
+    
+
+}
+}
+
+
+
+@media (max-width: 920px) {  
+    .logo img {
+        height: 60px;
+        position: fixed;
+        z-index: 2;
+        margin-top: -28px;
+        margin-left: -70px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pour Masquer open-menu et close-menu pour les écrans de plus de 1400px */
+@media (min-width: 1400px) {
+    .heade-right{
+        display:none ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
